@@ -64,7 +64,7 @@ function getRandomQuote(array) {
 
   // Generate a random number that is not the same as the previous one
   do {
-    newRandomNumber = Math.floor ( Math.random() * array.length );
+    newRandomNumber = Math.floor( Math.random() * array.length );
   } while ( newRandomNumber === previousRandomNumber);
 
   previousRandomNumber = newRandomNumber;
@@ -81,12 +81,30 @@ function getRandomQuote(array) {
 }
 
 /***
+ * Function to generate a random value between 0 and 255 for RGB color
+***/
+const getColorValue = () => {
+  return Math.floor( Math.random() * 256 );
+}
+
+/***
+ * Function to get a random color to update the background-color on the body tag
+***/
+function randomBackgroundColor() {
+  const backgroundColor = `rgb( ${getColorValue()}, ${getColorValue()}, ${getColorValue()} )`;
+
+  document.querySelector('body').style.backgroundColor = backgroundColor;
+}
+
+/***
  * Function generates a random quote, formats it into HTML,
  * and displays it inside the element with the ID 'quote-box'.
 ***/
 function printQuote() {
   // Get a random quote object from the 'quotes' array
   const randomQuote = getRandomQuote(quotes);
+
+  randomBackgroundColor();
 
   // Start constructing the HTML string with the quote and source
   let quote = `<p class="quote">${randomQuote.quote}</p>
@@ -111,6 +129,15 @@ function printQuote() {
   // Set the generated HTML as the content of the element with ID 'quote-box'
   return document.getElementById('quote-box').innerHTML = quote;
 }
+
+function changeQuote() {
+  // Pass the 'printQuote' function as a reference to 'setInterval'
+  setInterval(printQuote, 10000); // Call 'printQuote' every 10 seconds
+}
+
+// Call the function to start the quote change
+changeQuote();
+
 
 /***
  * click event listener for the print quote button
