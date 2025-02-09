@@ -10,8 +10,43 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-
-
+const quotes = [
+  {
+    quote: "I have not failed. I've just found 10,000 ways that won't work.",
+    source: "Thomas Edison",
+    citation: "Attributed in writings about his work on the light bulb",
+    year: "Circa 1890",
+    tags: "Innovation"
+  },
+  {
+    quote: "Why so serious?",
+    source: "The Joker",
+    citation: "The Dark Knight (film)",
+    year: "2008",
+    tags: "Pop Culture"
+  },
+  {
+    quote: "In politics, stupidity is not a handicap.",
+    source: "Napoleon Bonaparte",
+    citation: "Attributed (historical speeches and writings)",
+    year: "Early 1800s",
+    tags: "Politics"
+  },
+  {
+    quote: "Stay hungry, stay foolish.",
+    source: "Steve Jobs",
+    citation: "Stanford University Commencement Speech",
+    year: "2005",
+    tags: "Inspiration"
+  },
+  {
+    quote: "Do or do not. There is no try",
+    source: "Yoda",
+    citation: "Star Wars: Episode V – The Empire Strikes Back",
+    year: "1980",
+    tags: "Pop Culture"
+  }
+]
 
 /***
  * `getRandomQuote` function
