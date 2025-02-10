@@ -69,15 +69,7 @@ function getRandomQuote(array) {
 
   previousRandomNumber = newRandomNumber;
  
-  // Create an object with the quote details
-  const randomQuote = {
-    quote: array[newRandomNumber].quote,
-    source: array[newRandomNumber].source,
-    citation: array[newRandomNumber].citation,
-    year: array[newRandomNumber].year,
-    tags: array[newRandomNumber].tags
-  }
-  return randomQuote;
+  return array[newRandomNumber];
 }
 
 /***
